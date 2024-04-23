@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DIRECTORY_PATH = "path/to/source/code"
-        TESTING_ENVIRONMENT = "ANTONY-TEST-ENV"
-        PRODUCTION_ENVIRONMENT = "ANTONY-PROD-ENV" 
+        DIRECTORY_PATH = "https://github.com/antonyraju66/Jenkinsproject/blob/main/jenkinsfile"
+        TESTING_ENVIRONMENT = "ANTONY-TEST-ENVIRONMENT"
+        PRODUCTION_ENVIRONMENT = "ANTONY-PRODUCTION-ENVIRONMENT" 
     } 
 
     stages {
         stage('Build') {
             steps {
-                echo "Fetch the source code from ${env.DIRECTORY_PATH}"
+                echo "Fetching the source code from ${env.DIRECTORY_PATH}"
                 echo "Compile the code and generate any necessary artifacts"
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo "Deploy the application to ${env.TESTING_ENVIRONMENT}"
+                echo "Deploy the application to the ${env.TESTING_ENVIRONMENT}"
             }
         }
         stage('Approval') {
@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Deploy to Production') {
             steps {
-                echo "Deploy the code to the production environment: ${env.PRODUCTION_ENVIRONMENT}"
+                echo "Deploy the code to the ${env.PRODUCTION_ENVIRONMENT}"
             }
         }
     }
