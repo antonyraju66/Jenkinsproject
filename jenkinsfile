@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     environment {
-        DIRECTORY_PATH = 'path/to/source/code'
-        TESTING_ENVIRONMENT = 'ANTONY-TEST-ENV'
-        PRODUCTION_ENVIRONMENT = 'ANTONY-PROD-ENV'  
+        DIRECTORY_PATH = "path/to/source/code"
+        TESTING_ENVIRONMENT = "ANTONY-TEST-ENV"
+        PRODUCTION_ENVIRONMENT = "ANTONY-PROD-ENV" 
+    } 
 
     stages {
         stage('Build') {
@@ -41,5 +42,4 @@ pipeline {
             }
         }
     }
-}
 }
